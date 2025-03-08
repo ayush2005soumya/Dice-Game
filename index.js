@@ -1,19 +1,18 @@
-var randnum1=Math.floor(Math.random()*6)+1;//1-6
-var randdiceimg="dice"+randnum1+".png";
-var randimsrc="images/"+randdiceimg;
-var img1=document.querySelectorAll("img")[0];
-img1.setAttribute("src",randimsrc);
-var randnum2=Math.floor(Math.random()*6)+1;
-var randimsrc2="images/dice"+randnum2+".png";
-var img2=document.querySelectorAll("img")[1];
-img2.setAttribute("src",randimsrc2);
+function playGame() {
+    var userChoice = document.getElementById("userDice").value;
+    var randnum1 = parseInt(userChoice);
+    var randimsrc1 = "images/dice" + randnum1 + ".png";
+    document.querySelector(".img1").setAttribute("src", randimsrc1);
 
-if(randnum1>randnum2){
-    document.querySelector("h1").innerHTML="&#127881 Player 1 wins!";
-}
-else if(randnum2>randnum1){
-    document.querySelector("h1").innerHTML="&#127881 Player 2 wins!";
-}
-else{
-    document.querySelector("h1").innerHTML="Draw!";
-}
+    var randnum2 = Math.floor(Math.random() * 6) + 1;
+    var randimsrc2 = "images/dice" + randnum2 + ".png";
+    document.querySelector(".img2").setAttribute("src", randimsrc2);
+
+    if (randnum1 > randnum2) {
+      document.querySelector("h1").innerHTML = "🎉 You Win!";
+    } else if (randnum2 > randnum1) {
+      document.querySelector("h1").innerHTML = "💻 Computer Wins!";
+    } else {
+      document.querySelector("h1").innerHTML = "It's a Draw!";
+    }
+  }

@@ -12,20 +12,28 @@
   </head>
   <body>
     <div class="container">
-      <h1>Refresh Me</h1>
-
+      <h1>Choose Your Dice</h1>
       <div class="dice">
-        <p>Player 1</p>
+        <p>Player (You)</p>
+        <label for="userDice">Select Your Dice Number:</label>
+<select id="userDice" aria-label="Select Your Dice Number">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+</select>
         <img class="img1" src="images/dice6.png" alt="image1"/>
       </div>
 
       <div class="dice">
-        <p>Player 2</p>
+        <p>Computer</p>
         <img class="img2" src="images/dice6.png" alt="image2"/>
       </div>
+      <button onclick="playGame()">Roll</button>
     </div>
     <script src="index.js" charset="utf-8"></script>
   </body>
-    <footer>🎲 Let's play a game of probability 🎲</footer>
-  
+  <footer>🎲 Let's play a game of probability 🎲</footer>
 </html>
