@@ -1,18 +1,15 @@
-function playGame() {
-    var userChoice = document.getElementById("userDice").value;
-    var randnum1 = parseInt(userChoice);
-    var randimsrc1 = "images/dice" + randnum1 + ".png";
-    document.querySelector(".img1").setAttribute("src", randimsrc1);
-
-    var randnum2 = Math.floor(Math.random() * 6) + 1;
-    var randimsrc2 = "images/dice" + randnum2 + ".png";
-    document.querySelector(".img2").setAttribute("src", randimsrc2);
-
-    if (randnum1 > randnum2) {
-      document.querySelector("h1").innerHTML = "🎉 You Win!";
-    } else if (randnum2 > randnum1) {
-      document.querySelector("h1").innerHTML = "💻 Computer Wins!";
-    } else {
-      document.querySelector("h1").innerHTML = "It's a Draw!";
-    }
-  }
+var randomNumber1 = Math.floor(Math.random() * 6) + 1;
+var randomNumber2 = Math.floor(Math.random() * 6) + 1;
+var randomDiceImage1 = "dice" + randomNumber1 + ".png"; // dice1.png - dice6.png
+var randomDiceImage2 = "dice" + randomNumber2 + ".png"; // dice1.png - dice6.png
+var randomImageSource1 = "images/" + randomDiceImage1; // images/dice1.png - images/dice6.png
+var randomImageSource2 = "images/" + randomDiceImage2; // images/dice1.png - images/dice6.png
+document.querySelectorAll("img")[0].setAttribute("src", randomImageSource1);
+document.querySelectorAll("img")[1].setAttribute("src", randomImageSource2);
+if (randomNumber1 > randomNumber2) {
+  document.querySelector("h1").innerHTML = "🚩 Player 1 Wins!";
+} else if (randomNumber1 < randomNumber2) {
+  document.querySelector("h1").innerHTML = "Player 2 Wins! 🚩";
+} else {
+  document.querySelector("h1").innerHTML = "Draw!";
+}
